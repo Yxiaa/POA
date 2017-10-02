@@ -21,11 +21,7 @@ public class RockPaperScissorsTest {
         rps = null;
     }
 
-    @Test
-    public void testPlay() throws Exception {
-    }
-
-    @Parameters ({ "PAPER" ,"PAPER" })
+    @Parameters ({ "paper" ,"rock" })
     @Test
     void testWinPlay(String p1, String p2) {
 
