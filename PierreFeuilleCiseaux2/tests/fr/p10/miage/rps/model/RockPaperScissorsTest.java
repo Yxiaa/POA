@@ -5,15 +5,22 @@ import fr.p10.miage.rps.model.Result;
 import fr.p10.miage.rps.model.RockPaperScissors;
 import org.testng.annotations.*;
 
+import java.util.List;
+
 import static org.testng.Assert.*;
 
 public class RockPaperScissorsTest {
 
     RockPaperScissors rps;
+    List<RPSEnum> m1;
+    List<RPSEnum> m2;
 
     @BeforeClass
     public void setUp() throws Exception {
         rps = new RockPaperScissors();
+        m1 = Player.genererMouvements();
+        m2 = Player.genererMouvements();
+
     }
 
     @AfterClass
@@ -77,12 +84,31 @@ public class RockPaperScissorsTest {
 
     @Test(dataProvider = "tieData")
     void testTiePlay(RPSEnum p1, RPSEnum p2) {
+
         assertEquals(rps.play(p1, p2), Result.TIE);
     }
 
     @Test(dataProvider = "lostData")
     void testLostPlay(RPSEnum p1, RPSEnum p2) {
         assertEquals(rps.play(p1, p2), Result.LOST);
+    }
+
+    @Test
+    void playJoueur() {
+
+        Player j1 = new Player("Sam", m1);
+        Player j2 = new Player("Max", m2);
+        Result res = rps.play(j1, j2);
+
+        //System.out.println(j1.getScore() + " " + j2.getScore());
+
+        if(j1.getScore()>j2.getScore())
+            assertEquals(res, Result.WIN);
+        else if(j1.getScore()<j2.getScore())
+            assertEquals(res, Result.LOST);
+        else
+            assertEquals(res, Result.TIE);
+
     }
 
 }
