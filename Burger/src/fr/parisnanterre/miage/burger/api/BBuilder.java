@@ -6,13 +6,15 @@ public class BBuilder {
 
     Meat meat;
     Size size;
-    ArrayList<Sauce> sauce;
+    ArrayList<Sauce> sauce = new ArrayList<Sauce>();
     boolean wo;
     boolean wc;
     boolean tomato;
+    Menu menu;
 
     BBuilder(Meat meat) {
         this.meat = meat;
+        this.size = Size.MEDIUM;
     }
 
     BBuilder(Meat meat, Size size) {
@@ -39,8 +41,14 @@ public class BBuilder {
         return new Burger(this);
     }
 
-    public BBuilder addTomato() {
+    BBuilder addTomato() {
         this.tomato = true;
         return this;
+    }
+
+    BBuilder addMenu(Menu meatMenu) {
+        this.menu = meatMenu;
+        return this;
+
     }
 }
