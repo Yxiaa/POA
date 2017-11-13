@@ -1,4 +1,4 @@
-package fr.parisnanterre.miage.filesystem;
+package fr.parisnanterre.miage.filesystem.main;
 
 public class FileFactory {
     private static FileFactory ourInstance = new FileFactory();

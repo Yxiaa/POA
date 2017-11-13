@@ -1,4 +1,4 @@
-package fr.parisnanterre.miage.filesystem;
+package fr.parisnanterre.miage.filesystem.main;
 
 public abstract class AbstractFile implements File {
 

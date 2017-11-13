@@ -1,4 +1,4 @@
-package fr.parisnanterre.miage.filesystem;
+package fr.parisnanterre.miage.filesystem.main;
 
 public class OrdinaryFile extends AbstractFile {
 
@@ -11,8 +11,9 @@ public class OrdinaryFile extends AbstractFile {
         super(name, user);
 
         this.propertyOf = getOwner();
-        user.addFile(this);
         this.text = "hello !";
+
+        //user.addFile(this);
     }
 
     @Override

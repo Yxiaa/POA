@@ -1,4 +1,4 @@
-package fr.parisnanterre.miage.filesystem;
+package fr.parisnanterre.miage.filesystem.main;
 
 import java.util.ArrayList;
 
@@ -15,7 +15,7 @@ public class Repository extends AbstractFile{
         super(name, user);
         this.id = getId();
 
-        user.addFile(this);
+        //user.addFile(this);
         files=  new ArrayList<File>();
     }
 
