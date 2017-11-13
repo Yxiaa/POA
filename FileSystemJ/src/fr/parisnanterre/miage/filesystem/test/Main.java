@@ -10,7 +10,7 @@ public class Main {
     public static void main(String [ ] args)
     {
         User jean = new User("Jean");
-        Repository f = (Repository) FileFactory.getInstance().createRepository("Mon répertoire", jean);
+        File f = FileFactory.getInstance().createRepository("Mon répertoire", jean);
         f.append("fichier.txt");
         f.append("fichier.xls");
         System.out.println(f.read());
