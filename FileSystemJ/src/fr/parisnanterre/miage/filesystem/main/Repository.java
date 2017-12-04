@@ -40,6 +40,10 @@ public class Repository extends AbstractFile{
 
     }
 
+    public ArrayList<File> getFiles() {
+        return files;
+    }
+
     public int size() {
         return files.size();
     }
@@ -51,9 +55,7 @@ public class Repository extends AbstractFile{
 
     @Override
     public void write(String text) {
-        files.clear();
-        id_Fichiers = 1;
-        this.addFile(new OrdinaryFile(text, propertyOf));
+        this.addFile(new Repository(text, propertyOf));
     }
 
 

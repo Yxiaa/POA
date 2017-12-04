@@ -13,8 +13,9 @@ public class Main {
         File f = FileFactory.getInstance().createRepository("Mon répertoire", jean);
         f.append("fichier.txt");
         f.append("fichier.xls");
-        System.out.println(f.read());
+        f.write("Répertoire");
 
+        System.out.println(f.read());
 
 
     }
