@@ -24,8 +24,11 @@ public class Main {
             leTout.ajouter(room2);
             //avec vsisteur
             VisitorOne vo = new VisitorOne();
+            VisiteurTwo vt = new VisiteurTwo();
 
             leTout.accept(vo);
+            leTout.accept(vt);
+            System.out.println(vt.value);
 
 
         }
